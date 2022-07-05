@@ -93,7 +93,7 @@ return {
       end,
     },
   },
-  user_commands = {
+  commands = {
     {
       name = 'DenolsCache',
       command = function()

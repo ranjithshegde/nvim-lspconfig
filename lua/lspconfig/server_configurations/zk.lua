@@ -6,7 +6,7 @@ return {
     filetypes = { 'markdown' },
     root_dir = util.root_pattern '.zk',
   },
-  user_commands = {
+  commands = {
     {
       name = 'ZkIndex',
       command = function()

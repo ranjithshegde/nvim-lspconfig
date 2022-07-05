@@ -137,7 +137,7 @@ return {
       end,
     },
   },
-  user_commands = {
+  commands = {
     {
       name = 'EslintFixAll',
       command = function()

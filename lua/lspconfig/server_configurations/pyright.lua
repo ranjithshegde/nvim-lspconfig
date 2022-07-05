@@ -40,7 +40,7 @@ return {
       },
     },
   },
-  user_commands = {
+  commands = {
     {
       name = 'PyrightOrganizeImports',
       command = organize_imports,

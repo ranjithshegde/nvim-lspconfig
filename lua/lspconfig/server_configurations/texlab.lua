@@ -100,7 +100,7 @@ return {
       },
     },
   },
-  user_commands = {
+  commands = {
     {
       name = 'TexlabBuild',
       command = function()

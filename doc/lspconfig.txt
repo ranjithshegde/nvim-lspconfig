@@ -245,7 +245,7 @@ validating using `vim.validate` is:
       default_config = {'t'},
       on_new_config = {'f', true},
       on_attach = {'f', true},
-      user_commands = {'t', true},
+      commands = {'t', true},
       docs = {'t', true},
     }
 <
@@ -256,13 +256,13 @@ where the structure of the docs table is as follows:
       default_config = {'t', true},
     }
 <
-`user_commands` is a list of tables where each table consists of the fields
+`commands` is a list of tables where each table consists of the fields
 `name`, `command`, and `opts`. See |nvim_create_user_command| for more
 details.
 
 Example:
 >
-  user_commands = {
+  commands = {
      {
       name = "TexlabBuild"
       command = function()

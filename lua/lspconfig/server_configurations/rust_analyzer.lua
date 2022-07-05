@@ -56,7 +56,7 @@ return {
       ['rust-analyzer'] = {},
     },
   },
-  user_commands = {
+  commands = {
     {
       name = 'CargoReload',
       command = function()

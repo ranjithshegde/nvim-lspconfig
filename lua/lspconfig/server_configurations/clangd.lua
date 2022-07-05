@@ -49,7 +49,7 @@ return {
     single_file_support = true,
     capabilities = default_capabilities,
   },
-  user_commands = {
+  commands = {
     {
       name = 'ClangdSwitchSourceHeader',
       command = function()
