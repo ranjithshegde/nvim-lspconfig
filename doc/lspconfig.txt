@@ -286,6 +286,31 @@ Example:
 >
     configs.texlab.buf_build = buf_build
 <
+
+Warning: Commands is deprecated and will be removed in future releases.
+It is recommended to use `vim.api.nvim_create_user_command()` instead in an `on_attach` function.
+
+Example:
+>
+  local function organize_imports()
+    local params = {
+      command = 'pyright.organizeimports',
+      arguments = { vim.uri_from_bufnr(0) },
+    }
+    vim.lsp.buf.execute_command(params)
+  end
+
+  local on_attach = function(client, bufnr)
+    if client.name == "pyright" then
+      vim.api.nvim_create_user_command("PyrightOrganizeImports", organize_imports, {desc = 'Organize Imports'})
+    end
+  end
+
+  require("lspconfig")['pyright'].setup({
+    on_attach = on_attach
+  })
+<
+
 ==============================================================================
 ADDING NEW SERVERS                                    *lspconfig-new*
 

@@ -40,6 +40,7 @@ function configs.__newindex(t, config_name, config_def)
       commands = { config.commands, 't', true },
     }
     if config.commands then
+      vim.deprecate('lspconfig.[server].setup.commands', 'vim.api.nvim_create_user_command', '0.9', 'nvim-lspconfig')
       for _, v in pairs(config.commands) do
         validate {
           name = { v.name, 's' },
