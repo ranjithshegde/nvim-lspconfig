@@ -243,7 +243,7 @@ function M.server_per_root_dir_manager(make_config)
         new_config.root_dir = nil
         new_config.workspace_folders = nil
       end
-      client_id = lsp.start_client(new_config)
+      client_id = lsp.start(new_config)
 
       -- Handle failures in start_client
       if not client_id then
@@ -371,7 +371,7 @@ function M.get_other_matching_providers(filetype)
 end
 
 function M.get_active_client_by_name(bufnr, servername)
-  for _, client in pairs(vim.lsp.buf_get_clients(bufnr)) do
+  for _, client in pairs(vim.lsp.get_active_clients({bufnr = bufnr})) do
     if client.name == servername then
       return client
     end
