@@ -72,7 +72,7 @@ function M._parse_user_command_options(command_definition)
       local attribute = k.gsub(k, '^%-+', '')
       opts[opts_aliases[attribute] or attribute] = v
     elseif type(k) == 'number' and type(v) == 'string' and v:match '^%-' then
-      -- Splits strings like "-narsg=* -complete=customlist,v:lua.something" into { "-nargs=*", "-complete=customlist,v:lua.something" }
+      -- Splits strings like "-nargs=* -complete=customlist,v:lua.something" into { "-nargs=*", "-complete=customlist,v:lua.something" }
       for _, command_attribute in ipairs(vim.split(v, '%s')) do
         -- Splits attribute into a key-value pair, like "-nargs=*" to { "-nargs", "*" }
         local attribute, value = unpack(vim.split(command_attribute, '=', { plain = true }))
